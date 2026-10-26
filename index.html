@@ -4,23 +4,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adilah's Portfolio</title>
+    <meta name="description" content="Adilah Hamizah's personal portfolio showcasing Network Computing and web development projects.">
+    <title>Adilah Hamizah | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hello! My name is Adilah.</p>
-    </header>
 
-    <section>
-        <h2>About Me</h2>
-        <p>I am a university student learning web development.</p>
+    <nav class="navbar" aria-label="Main navigation">
+        <a class="logo" href="#home">My Portfolio</a>
 
-        <button onclick="showMessage()">Click Me</button>
-        <p id="message"></p>
-    </section>
+        <button id="menuBtn" aria-expanded="false"
+                aria-controls="navLinks" aria-label="Open navigation">
+            Menu
+        </button>
 
-    <script src="script.js"></script>
+        <div id="navLinks" class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#about">About Me</a>
+            <a href="#contact">Contact</a>
+            <button id="themeBtn" type="button">Dark Mode</button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <p class="eyebrow">NETWORK COMPUTING STUDENT</p>
+            <h1>Hello, I'm Adilah Hamizah!</h1>
+            <p id="greeting">Welcome to my personal portfolio.</p>
+            <a class="button" href="#projects">View My Projects</a>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am Adilah Hamizah binti Deli from Johor.
+                I am studying Network Computing under the
+                Faculty of Computer Science and Information Technology.
+            </p>
+            <p>
+                I am currently learning TMN 3223 Web Application Development.
+                I am interested in technology, computer networking,
+                cybersecurity and web development.
+            </p>
+
+            <h3>My Skills</h3>
+            <ul class="skills">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Computer Networking</li>
+                <li>Network Security</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <p>Here are five projects related to my learning interests.</p>
+
+            <div class="filters" aria-label="Filter projects">
+                <button class="filterBtn active" data-filter="all"
+                        aria-pressed="true">All</button>
+                <button class="filterBtn" data-filter="web"
+                        aria-pressed="false">Web Development</button>
+                <button class="filterBtn" data-filter="network"
+                        aria-pressed="false">Networking</button>
+            </div>
+
+            <div class="projectList">
+                <article class="project" data-category="web">
+                    <h3>1. Personal Portfolio</h3>
+                    <p>A personal website introducing my background and skills.</p>
+                </article>
+
+                <article class="project" data-category="network">
+                    <h3>2. Network Design</h3>
+                    <p>A learning project about designing a basic computer network.</p>
+                </article>
+
+                <article class="project" data-category="web">
+                    <h3>3. Student Website</h3>
+                    <p>A website concept for presenting student information.</p>
+                </article>
+
+                <article class="project" data-category="network">
+                    <h3>4. Network Security</h3>
+                    <p>A study project exploring network security concepts and practices.</p>
+                </article>
+
+                <article class="project" data-category="web">
+                    <h3>5. Web Application</h3>
+                    <p>A simple web application concept using HTML, CSS and JavaScript.</p>
+                </article>
+            </div>
+            <p id="projectCount" aria-live="polite">Showing 5 projects.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Thank you for visiting my portfolio. Feel free to contact me.</p>
+
+            <p>Email:
+                <a href="mailto:106827@siswa.unimas.my">
+                    your-email@example.com
+                </a>
+            </p>
+
+            <form id="contactForm">
+                <label for="email">Your email</label>
+                <input type="email" id="email"
+                       placeholder="Enter your email" required>
+
+                <label for="message">Your message</label>
+                <textarea id="message" rows="5"
+                          placeholder="Write your message"
+                          maxlength="500" required></textarea>
+
+                <p id="charCount">0/500 characters</p>
+                <button type="submit">Send Message</button>
+                <p id="formResult" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <button id="topBtn" type="button"
+            aria-label="Back to top" hidden>↑</button>
+
+    <footer>
+        <p>&copy; 2026 Adilah Hamizah | Personal Portfolio</p>
+    </footer>
+
 </body>
 </html>

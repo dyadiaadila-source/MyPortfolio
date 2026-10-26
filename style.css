@@ -1,32 +1,264 @@
 
+/* Basic page design */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f0f4f8;
-    text-align: center;
     margin: 0;
-    padding: 30px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6f9;
+    color: #222;
 }
 
-header {
-    background: #234e70;
+a {
+    color: #174f8a;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #e09b18;
+    outline-offset: 3px;
+}
+
+/* Navigation */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #234e70;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.logo {
     color: white;
-    padding: 30px;
-    border-radius: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+#menuBtn {
+    display: none;
+}
+
+/* Main sections */
 section {
-    background: white;
-    padding: 25px;
-    margin: 25px auto;
-    max-width: 600px;
-    border-radius: 12px;
+    padding: 45px 8%;
+    scroll-margin-top: 65px;
 }
 
+.hero {
+    text-align: center;
+    background-color: #dceaf7;
+    padding: 80px 8%;
+}
+
+.hero h1 {
+    font-size: clamp(28px, 5vw, 42px);
+}
+
+.eyebrow {
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.button,
 button {
-    background: #234e70;
-    color: white;
-    padding: 12px 20px;
+    display: inline-block;
+    padding: 10px 16px;
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
+    background-color: #234e70;
+    color: white;
+    text-decoration: none;
     cursor: pointer;
+}
+
+.button {
+    margin-top: 10px;
+}
+
+button:hover,
+.button:hover {
+    background-color: #16354d;
+}
+
+/* Skills and project cards */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 20px;
+}
+
+.projectList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.project {
+    background-color: white;
+    border: 1px solid #d1d9e0;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.filterBtn.active {
+    background-color: #16354d;
+    outline: 2px solid #e09b18;
+}
+
+#projectCount,
+#charCount {
+    font-size: 14px;
+}
+
+/* Contact form */
+form {
+    max-width: 550px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+#formResult {
+    font-weight: bold;
+}
+
+/* Back-to-top button */
+#topBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-size: 20px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: #181818;
+    color: #f5f5f5;
+}
+
+.dark-mode .hero {
+    background-color: #303d4b;
+}
+
+.dark-mode .project {
+    background-color: #292929;
+    border-color: #555;
+}
+
+.dark-mode a {
+    color: #9dcaff;
+}
+
+.dark-mode .navbar a,
+.dark-mode .logo {
+    color: white;
+}
+
+.dark-mode button,
+.dark-mode .button {
+    background-color: #365f82;
+    color: white;
+}
+
+.dark-mode input,
+.dark-mode textarea {
+    background-color: #292929;
+    color: white;
+    border-color: #888;
+}
+
+/* Tablet and mobile layout */
+@media (max-width: 700px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    #menuBtn {
+        display: inline-block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    section {
+        padding: 35px 6%;
+    }
+
+    .hero {
+        padding: 55px 6%;
+    }
+
+    .projectList {
+        grid-template-columns: 1fr;
+    }
 }
