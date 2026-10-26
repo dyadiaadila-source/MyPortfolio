@@ -1,4 +1,3 @@
-
 /* 1. Dark mode */
 const themeBtn = document.getElementById("themeBtn");
 
