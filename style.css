@@ -1,0 +1,32 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    text-align: center;
+    margin: 0;
+    padding: 30px;
+}
+
+header {
+    background: #234e70;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+section {
+    background: white;
+    padding: 25px;
+    margin: 25px auto;
+    max-width: 600px;
+    border-radius: 12px;
+}
+
+button {
+    background: #234e70;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
